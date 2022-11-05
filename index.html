@@ -10,6 +10,7 @@
       const request = new XMLHttpRequest();
       request.onload = function(){
         const data = JSON.parse(request.responseText);
+        //console.log(data);
         updateDOM(data);
       }
       request.open('GET', 'https://randomuser.me/api/');
@@ -21,6 +22,7 @@
             (response) => {
               return response.json();
             }).then((data) => {
+              //console.log(data);
               updateDOM(data);
             }).catch((err) => {
               console.error(err);
@@ -30,6 +32,7 @@
               async function get_data_fetch_async(){
                 const response = await fetch('https://randomuser.me/api/');
                 const data = await response.json();
+                console.log(data);
                 updateDOM(data);
                 }
 
